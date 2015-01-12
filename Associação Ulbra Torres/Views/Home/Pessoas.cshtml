@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Pessoas";
+}
+
+<h2>PESSOAS <i class="glyphicon glyphicon-list-alt" style="font-size:1em;"></i></h2>
+
+<hr />
+
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th></th>
+                <th style="text-align: center;">Homens</th>
+                <th style="text-align: center;">Mulheres</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="text-align: center;"><strong>Crianças</strong></td>
+                <td style="text-align: center;">@ViewBag.contHomensCriancas</td>
+                <td style="text-align: center;">@ViewBag.contMulheresCriancas </td>
+            </tr>
+            <tr>
+                <td style="text-align: center;"><strong>Adultos</strong></td>
+                <td style="text-align: center;">@ViewBag.contHomensAdultos</td>
+                <td style="text-align: center;">@ViewBag.contMulheresAdultos</td>
+            </tr>
+            <tr>
+                <td style="text-align: center;"><strong>Idosos</strong></td>
+                <td style="text-align: center;">@ViewBag.contHomensIdosos</td>
+                <td style="text-align: center;">@ViewBag.contMulheresIdosos</td>
+            </tr>
+            <tr>
+                <td style ="text-align: center;"><strong>TOTAL:</strong></tdstyle>
+                <td style="text-align: center;">@ViewBag.contHomens</td>
+                <td style="text-align: center;">@ViewBag.contMulheres</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<div class="col-md-4"></div>
+<div class="col-md-4"></div>
+<div class=" col-md-4 right" align="center" style="border: 1px solid #dddddd;">
+    <h5><strong>Total de Cadastrados:</strong> @ViewBag.contTotal</h5>
+</div>
+
+<hr />

@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Eleitores";
+}
+
+<h2>Eleitores <i class="glyphicon glyphicon-flag" style="font-size:1em;"></i></h2>
+<hr />
+
+<div class="col-md-6">
+    <p>Associados</p>
+    @Html.Action("AssociadosEleitores")
+</div>
+
+<div class="col-md-6">
+    <p>Dependentes</p>
+    @Html.Action("DependentesEleitores")
+</div>

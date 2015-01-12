@@ -1,0 +1,323 @@
+﻿@model IEnumerable<Associação_Ulbra_Torres.Models.Entidade.Associados>
+
+@Scripts.Render("~/Scripts/impressao.js")
+
+@if (Model != null)
+{<div class="table-responsive">
+    <table class="table lista-clientes">
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                NOME
+            </th>
+            <th>
+                GERAR CARTEIRA
+            </th>
+            <th>
+                DETALHES
+            </th>
+            <th>
+                DEPENDENTES
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.idAssociado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nome)
+                </td>
+                <td>
+                    <button class="btn btn-primary btn-sm" onclick="imprimir(@item.idAssociado)">Gerar Carteirinha <i class="glyphicon glyphicon-file"></i></button>
+                </td>
+                <td>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#@Html.DisplayFor(modelItem => item.idAssociado)">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="@Html.DisplayFor(modelItem => item.idAssociado)" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Detalhes @Html.DisplayFor(modelItem => item.nome)</h4>
+                                </div>
+                                <div class="modal-body">
+
+                                    <dl class="dl-horizontal">
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.First().nome)
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(modelItem => item.nome)
+                                        </dd>
+
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.First().nacionalidade)
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(modelItem => item.nacionalidade)
+                                        </dd>
+
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.First().naturalidade)
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(modelItem => item.naturalidade)
+                                        </dd>
+
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.First().estadoNaturalidade)
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(modelItem => item.estadoNaturalidade)
+                                        </dd>
+
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.First().dataNascimento)
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(modelItem => item.dataNascimento)
+                                        </dd>
+
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.First().estadoCivil)
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(modelItem => item.estadoCivil)
+                                        </dd>
+
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.First().cpf)
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(modelItem => item.cpf)
+                                        </dd>
+
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.First().rg)
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(modelItem => item.rg)
+                                        </dd>
+
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.First().tituloDeEleitor)
+                                        </dt>
+
+                                        @if (item.tituloDeEleitor == "")
+                                        {
+                                            <dd style="color: red;">Nenhum título de eleitor informado.</dd>
+                                        }
+                                        else
+                                        {
+                                            <dd>
+                                                @Html.DisplayFor(modelItem => item.tituloDeEleitor)
+                                            </dd>
+                                        }
+
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.First().zona)
+                                        </dt>
+
+                                        @if (item.zona == "")
+                                        {
+                                            <dd style="color: red;">Nenhuma zona eleitoral informada.</dd>
+                                        }
+                                        else
+                                        {
+                                            <dd>
+                                                @Html.DisplayFor(modelItem => item.zona)
+                                            </dd>
+                                        }
+
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.First().secao)
+                                        </dt>
+
+                                        @if (item.secao == "")
+                                        {
+                                            <dd style="color: red;">Nenhuma seção eleitoral informada.</dd>
+                                        }
+                                        else
+                                        {
+                                            <dd>
+                                                @Html.DisplayFor(modelItem => item.secao)
+                                            </dd>
+                                        }
+
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.First().endereco)
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(modelItem => item.endereco)
+                                        </dd>
+
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.First().numero)
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(modelItem => item.numero)
+                                        </dd>
+
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.First().bairro)
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(modelItem => item.bairro)
+                                        </dd>
+
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.First().cidade)
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(modelItem => item.cidade)
+                                        </dd>
+
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.First().estado)
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(modelItem => item.estado)
+                                        </dd>
+
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.First().cep)
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(modelItem => item.cep)
+                                        </dd>
+
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.First().sexo)
+                                        </dt>
+
+                                        @if (item.sexo.ToString() == "H")
+                                        {
+                                            <dd>
+                                                Homem
+                                            </dd>
+                                        }
+                                        else
+                                        {
+                                            <dd>
+                                                Mulher
+                                            </dd>
+                                        }
+
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.First().observacoes)
+                                        </dt>
+
+                                        @if (item.observacoes == "")
+                                        {
+                                            <dd style="color: red;">Nenhuma observação informada.</dd>
+                                        }
+                                        else
+                                        {
+                                            <dd>
+                                                @Html.DisplayFor(modelItem => item.observacoes)
+                                            </dd>
+                                        }
+
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.First().tipoResidencia)
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(modelItem => item.tipoResidencia)
+                                        </dd>
+
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.First().email)
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(modelItem => item.email)
+                                        </dd>
+
+                                        <dt>
+                                            Religião
+                                        </dt>
+
+                                        @if (item.religiao.nome == null)
+                                        {
+                                            <dd style="color: red;">Nenhuma religiao informada.</dd>
+                                        }
+                                        else
+                                        {
+                                            <dd>
+                                                @Html.DisplayFor(modelItem => item.religiao.nome)
+                                            </dd>
+                                        }
+
+                                        <dt>
+                                            Telefones
+                                        </dt>
+
+                                        @if (item.telefones.Count == 0)
+                                        {
+                                            <dd style="color: red;">Nenhum telefone informado.</dd>
+                                        }
+                                        else
+                                        {
+                                            foreach (var fone in item.telefones)
+                                            {
+                                                <dd>
+                                                    <strong>@fone.tipo</strong>
+                                                    <br />
+                                                    @fone.numero
+                                                </dd>
+                                            }
+                                        }
+
+
+                                    </dl>
+
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <a type="button" class="btn btn-primary btn-sm" href="/Associados/ListaDependentes?pIdAssociado=@item.idAssociado">Dependentes</a>
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>
+}
+
+@if (@ViewBag.aviso != null)
+{
+    <div class="alert alert-danger text-center">@ViewBag.aviso</div>
+}
+
+
+

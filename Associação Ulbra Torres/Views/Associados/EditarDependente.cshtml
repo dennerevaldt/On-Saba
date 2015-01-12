@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Associação_Ulbra_Torres.Models.Entidade.Dependentes>
+
+@{
+    ViewBag.Title = "Editar";
+}
+
+<h2>DEPENDENTES</h2>
+<hr />
+
+<div class="col-md-4">
+    <nav class="navbar navbar-default" role="navigation">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-lat">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-collapse-lat">
+            <div class=" panel-heading">Menu</div>
+            <ul class="nav nav-stacked">
+                <li><a href="/Associados/ListaDependentes?pIdAssociado=@ViewBag.idAssociado">Dependentes Cadastrados</a></li>
+                <li><a href="/Associados/AdicionarDependente?pIdAssociado=@ViewBag.idAssociado">Adicionar Novo(a)</a></li>
+                <li><a href="/Associados/DeletarDependente?pIdAssociado=@ViewBag.idAssociado">Excluir</a></li>
+                <li class="active"><a href="/Associados/EditarDependente?pIdAssociado=@ViewBag.idAssociado">Editar</a></li>
+                <li><a href="/Associados/">Voltar para Associados <i class="glyphicon glyphicon-arrow-right"></i> </a></li>
+            </ul>
+
+
+        </div><!-- /.navbar-collapse -->
+    </nav>
+
+</div><!--/end left column-->
+
+<div class="col-md-8 col-sm-3">
+    <h4>Editar</h4>
+    <hr />
+
+    <div class="table-responsive">
+        <table class="table">
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    NOME
+                </th>
+                <th>
+                    <i class="glyphicon glyphicon-pencil"></i>
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.idDependente)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nome)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar", "EditarDependenteDetalhes", new { pIdDependente = item.idDependente })
+                    </td>
+                </tr>
+            }
+
+        </table>
+        </div>
+    </div>
+

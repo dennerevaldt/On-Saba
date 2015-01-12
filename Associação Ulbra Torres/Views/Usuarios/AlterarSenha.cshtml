@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.title = "Alterar Senha";
+    Layout = "~/Views/Shared/_LogIn.cshtml";
+}
+
+<div align="center">
+    <img class="imagemLogin" src="~/Content/Imagens/onsaba.png" height="60" />
+</div>
+<div class="col-md-4">
+</div>
+
+<div class="col-md-4">
+    <hr />
+    <form action="/Usuarios/AlterarSenha" method="post">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label>Digite seu email:</label>
+                <div>
+                    <input class="form-control text-box single-line" type="email" name="email" id="email" required/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div align="center">
+                    <input type="submit" value="Alterar Senha" class="btn btn-lg btn-success btn-block" />
+                </div>
+            </div></div>
+    </form>
+    @if (ViewBag.aviso != null)
+    {
+        <div class="alert alert-info alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Fechar</span></button>
+            @ViewBag.aviso
+        </div>
+    }
+</div>
+
+<div class="col-md-4">
+</div>
+        
+    

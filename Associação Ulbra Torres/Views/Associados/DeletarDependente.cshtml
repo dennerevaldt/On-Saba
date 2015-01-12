@@ -1,0 +1,100 @@
+﻿@model IEnumerable<Associação_Ulbra_Torres.Models.Entidade.Dependentes>
+
+@{
+    ViewBag.Title = "Deletar";
+}
+
+<h2>DEPENDENTES</h2>
+<hr />
+
+<div class="col-md-4">
+    <nav class="navbar navbar-default" role="navigation">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-lat">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-collapse-lat">
+            <div class=" panel-heading">Menu</div>
+            <ul class="nav nav-stacked">
+                <li><a href="/Associados/ListaDependentes?pIdAssociado=@ViewBag.idAssociado">Dependentes Cadastrados</a></li>
+                <li><a href="/Associados/AdicionarDependente?pIdAssociado=@ViewBag.idAssociado">Adicionar Novo(a)</a></li>
+                <li><a href="/Associados/DeletarDependente?pIdAssociado=@ViewBag.idAssociado">Excluir</a></li>
+                <li class="active"><a href="/Associados/EditarDependente?pIdAssociado=@ViewBag.idAssociado">Editar</a></li>
+                <li><a href="/Associados/">Voltar para Associados <i class="glyphicon glyphicon-arrow-right"></i></a></li>
+            </ul>
+
+
+        </div><!-- /.navbar-collapse -->
+    </nav>
+
+</div><!--/end left column-->
+
+<div class="col-md-8">
+    <h4>Excluir</h4>
+    <hr />
+
+    <div class="table-responsive">
+        <table class="table">
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    NOME
+                </th>
+                <th>
+                    PARENTESCO
+                </th>
+                <th>
+                    <i class="glyphicon glyphicon-trash"></i>
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.idDependente)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.parentesco)
+                    </td>
+                    <td>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#@Html.DisplayFor(modelItem => item.idDependente)">
+                            <i class="glyphicon glyphicon-trash"></i>
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="@Html.DisplayFor(modelItem => item.idDependente)" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Confirmação</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        Você deseja realmente deletar <strong>@Html.DisplayFor(modelItem => item.nome)</strong>?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                                        <a href="/Associados/DeletarDependenteConfirma?pIdDependente=@Html.DisplayFor(modelItem => item.idDependente)&pIdAssociado=@ViewBag.idAssociado"><input type="submit" value="Deletar" class="btn btn-danger" /></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            }
+
+        </table>
+        </div>
+    </div>

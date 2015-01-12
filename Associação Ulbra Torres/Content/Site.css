@@ -1,0 +1,93 @@
+﻿@import url(http://fonts.googleapis.com/css?family=Indie+Flower);
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.container {
+  width: auto;
+  padding: 0 15px;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.imagemIndex{
+    width: 80%;
+    opacity: 0.3;
+}
+
+.imagemIndex:hover{
+
+    opacity: 1;
+    -o-transition: all 1s;
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+    -ms-transition: all 1s;
+}
+
+.imagemSobre{
+    width: 50%;
+    opacity: 0.3;
+}
+
+.imagemSobre:hover{
+
+    opacity: 1;
+    -o-transition: all 1s;
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+    -ms-transition: all 1s;
+}
+
+.imagemLogin{
+    opacity: 0.9;
+}
+
+.progresso { 
+    display: none; 
+    position: fixed; 
+    top: 360px; 
+    left: 50%; 
+    margin-top: -50px; 
+    margin-left: -100px; 
+    vertical-align: middle; 
+    text-align: center; 
+    font-size: 16px; 
+    font-weight: bold; 
+    background-color: white; 
+    height: 90px; 
+    width: 120px; 
+} 
+
+.focusedInput {
+    border-color: red ;
+    outline: 0;
+    outline: thin dotted \9;
+    -moz-box-shadow: 0 0 8px rgba(82,168,236,.6);
+    box-shadow: 0 0 8px rgba(82,168,236,.6) !important;
+}

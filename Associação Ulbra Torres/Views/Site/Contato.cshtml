@@ -1,0 +1,83 @@
+﻿@model Associação_Ulbra_Torres.Models.Entidade.Contato
+
+@{
+    ViewBag.Title = "Contato";
+    Layout = "~/Views/Shared/_LayoutSite.cshtml";
+}
+
+<!-- Page Content -->
+<div class="container" style="padding-top: 2%; padding-bottom: 2%;">
+    <div class="row" align="center">
+        <div class="col-md-1"></div>
+        <div class="col-md-10 divIndex">
+            <div>
+
+                <form class="form-horizontal" method="post" action="/Site/Contato">
+
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <fieldset>
+                        <legend class="text-center header" style="padding-top: 10px; padding-bottom: 10px;">Tire suas dúvidas, envie já um email.</legend>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="glyphicon glyphicon-user" style="font-size:2em;"></i></span>
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.fName, new { htmlAttributes = new { @class = "form-control", placeholder = "Primeiro Nome" } })
+                                @Html.ValidationMessageFor(model => model.fName, "", new { color = "white" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="glyphicon glyphicon-user" style="font-size:2em;"></i></span>
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.lName, new { htmlAttributes = new { @class = "form-control", placeholder = "Segundo Nome" } })
+                                @Html.ValidationMessageFor(model => model.lName, "", new { color = "white" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="glyphicon glyphicon-envelope" style="font-size:2em;"></i></span>
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control", placeholder = "Email" } })
+                                @Html.ValidationMessageFor(model => model.email, "", new { color = "white" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="glyphicon glyphicon-phone" style="font-size:2em;"></i></span>
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.phone, new { htmlAttributes = new { @class = "form-control", placeholder = "Telefone" } })
+                                @Html.ValidationMessageFor(model => model.phone, "", new { color = "white" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="glyphicon glyphicon-edit" style="font-size:2em;"></i></span>
+                            <div class="col-md-8">
+                                <textarea class="form-control" id="message" name="message" placeholder="Escreva aqui sua mensagem" rows="7" data-val="true" data-val-required="O campo Mensagem é obrigatório."></textarea>
+                                @Html.ValidationMessageFor(model => model.message, "", new { color = "white" })
+                            </div>
+                        </div>
+                        @if (ViewBag.sucesso != null)
+                        {
+                            <div class="alert alert-success text-center" role="alert"> @ViewBag.sucesso</div>
+                        }
+                        @if (ViewBag.erro != null)
+                        {
+                            <div class="alert alert-danger text-center" role="alert"> @ViewBag.sucesso</div>
+                        }
+                        <div class="form-group">
+                            <div class="col-md-12 text-center">
+                                <button type="reset" class="btn btn-default btn-lg">Limpar</button>
+                                <button type="submit" class="btn btn-success btn-lg">Enviar</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+}

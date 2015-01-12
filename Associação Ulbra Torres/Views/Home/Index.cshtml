@@ -1,0 +1,131 @@
+﻿@model Associação_Ulbra_Torres.Models.Entidade.Escolas
+
+@{
+    ViewBag.Title = "Home Page";
+
+    var contEscolas = ViewBag.contadorEscolas;
+    var contAssociados = ViewBag.contadorAssociados;
+    var contAniversariantes = ViewBag.contadorAniversariantes;
+    var contEleitores = ViewBag.contadorEleitores;
+}
+
+<div class="row">
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="glyphicon glyphicon-user" style="font-size:5em;"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        
+                        <h2>@contAssociados</h2>
+                        <div>Associados</div>
+                    </div>
+                </div>
+            </div>
+            <a href="/Associados/Index">
+                <div class="panel-footer">
+                    <span class="pull-left">Ver Detalhes</span>
+                    <span class="pull-right"><i class="glyphicon glyphicon-arrow-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="glyphicon glyphicon-home" style="font-size:5em;"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+
+                        <h2>@contEscolas</h2>
+                        <div>Escolas</div>
+                    </div>
+                </div>
+            </div>
+            <a href="/Escolas/Index">
+                <div class="panel-footer">
+                    <span class="pull-left">Ver Detalhes</span>
+                    <span class="pull-right"><i class="glyphicon glyphicon-arrow-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="glyphicon glyphicon-flag" style="font-size:5em;"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+
+                        <h2>@contEleitores</h2>
+                        <div>Eleitores</div>
+                    </div>
+                </div>
+            </div>
+            <a href="/Home/Eleitores/">
+                <div class="panel-footer">
+                    <span class="pull-left">Ver Detalhes</span>
+                    <span class="pull-right"><i class="glyphicon glyphicon-arrow-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="glyphicon glyphicon-gift" style="font-size:5em;"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+
+                        <h2>@contAniversariantes</h2>
+                        <div>Aniversariantes do Mês</div>
+                    </div>
+                </div>
+            </div>
+            <a href="/Home/Aniversariantes/">
+                <div class="panel-footer">
+                    <span class="pull-left">Ver Detalhes</span>
+                    <span class="pull-right"><i class="glyphicon glyphicon-arrow-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="page-header">
+            <h1>Painel <small>Administrativo</small></h1>
+        </div>
+    </div>
+    <div class="panel-footer">Bairro São Francisco - Torres/RS </div>
+</div>
+
+<hr />
+
+<div class="col-md-4" align="center">
+    <a href="/Home/Sobre"><img class="imagemIndex img-responsive" src="~/Content/Imagens/onsaba.png" /></a>
+</div>
+
+<div class="col-md-4" align="center">
+    <a href="http://ulbratorres.com.br/" target="_blank"><img class="imagemIndex img-responsive" src="~/Content/Imagens/ulbra.png" /></a>
+</div>
+
+<div class="col-md-4" align="center">
+    <a href="http://informaticaulbratorres.blogspot.com.br/" target="_blank"><img class="imagemIndex img-responsive" src="~/Content/Imagens/computacao.png" /></a>
+</div>

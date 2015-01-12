@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Associação_Ulbra_Torres.Models.Entidade.Escolas>
+
+@{
+    ViewBag.Title = "Editar";
+}
+
+<h2>ESCOLAS <i class="glyphicon glyphicon-home" style="font-size:1em;"></i></h2>
+<hr />
+
+<div class="col-md-4">
+    <nav class="navbar navbar-default" role="navigation">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-lat">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-collapse-lat">
+            <div class=" panel-heading">Menu</div>
+            <ul class="nav nav-stacked">
+                <li><a href="/Escolas/Index">Escolas Cadastradas</a></li>
+                <li><a href="/Escolas/AdicionarEscola">Adicionar Nova</a></li>
+                <li><a href="/Escolas/Deletar">Excluir</a></li>
+                <li class="active"><a href="/Escolas/Editar">Editar</a></li>
+                <li><a href="/Escolas/DependentePorEscola/">Pesquisa estudantes por escola</a></li>
+            </ul>
+
+
+        </div><!-- /.navbar-collapse -->
+    </nav>
+
+</div><!--/end left column-->
+
+<div class="col-md-8">
+    <h4>Editar</h4>
+    <hr />
+
+    <table class="table">
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                NOME
+            </th>
+            <th>
+                <i class="glyphicon glyphicon-pencil"></i>
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.idEscola)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nomeEscola)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "EditarDetalhes", new { pIdEscola = item.idEscola }) 
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+

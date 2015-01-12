@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Associação_Ulbra_Torres.Models.Entidade.Associados>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tituloDeEleitor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.zona)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.secao)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tituloDeEleitor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.zona)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.secao)
+            </td>
+        </tr>
+    }
+
+</table>
+
+@if (@ViewBag.aviso != null)
+{
+    <div class="alert alert-danger text-center">@ViewBag.aviso</div>
+}

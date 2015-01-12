@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.title = "Login";
+    Layout = "~/Views/Shared/_LogIn.cshtml";
+}
+
+<div align="center">
+    <img class="imagemLogin" src="~/Content/Imagens/onsaba.png" height="60" />
+</div>
+
+
+<form class="form-signin" role="form" method="post" action="/Usuarios/LogIn">
+    <input type="text" class="form-control" placeholder="Email address" name="email" id="email" required autofocus>
+    <input type="password" class="form-control" placeholder="Password" name="senha" id="senha" required>
+    <div class="checkbox">
+        <label>
+            <small><input type="checkbox" value="true" name="lembrar"> Mantenha-me conectado</small>
+            <small><a href="/Usuarios/AlterarSenha" style="padding-left:14px;"><u>Esqueceu sua senha?</u></a></small>
+        </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+    @*<a class="btn btn-lg btn-default btn-block" href="/Usuarios/NovoUsuario">Novo Usuário</a>*@
+    <div>
+        <br />
+        @if (ViewBag.ErrorUserEkey != null)
+        {
+            <div class="alert alert-danger text-center" role="alert"><strong>OPS!</strong> @ViewBag.ErrorUserEkey</div>
+        }
+        
+        @if (ViewBag.sucesso != null)
+        {
+            <div class="alert alert-info text-center" role="alert"> @ViewBag.sucesso</div>
+        }
+    </div>
+</form>
+
+
+

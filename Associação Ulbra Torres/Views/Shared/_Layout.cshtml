@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - ON SABA</title>
+    <link rel="icon" href="@Url.Content("~/Content/favicon.ico")" />
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @{   
+        HttpCookie cookie = Request.Cookies["userLogado"];
+        var decValue = Server.UrlTokenDecode(cookie.Value);
+        string nome = System.Text.UTF8Encoding.UTF8.GetString(decValue);   
+    }
+
+</head>
+<body>
+    <div class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-topo">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/Home/">
+                    <img alt="Brand" height="18" src="~/Content/Imagens/logo.png">
+                </a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-collapse-topo">
+                <ul class=" nav navbar-nav">
+                    <li class="@ViewBag.home">@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li class="@ViewBag.associados">@Html.ActionLink("Associados", "Index", "Associados")</li>
+                    <li class="@ViewBag.escolas">@Html.ActionLink("Escolas", "Index", "Escolas")</li>
+                    <li class="@ViewBag.eleitores">@Html.ActionLink("Eleitores", "Eleitores", "Home")</li>
+                    <li class="@ViewBag.aniversariantes">@Html.ActionLink("Aniversariantes", "Aniversariantes", "Home")</li>
+                    <li class="@ViewBag.pessoas">@Html.ActionLink("Pessoas", "Pessoas", "Home")</li>
+                    <li class="@ViewBag.sobre">@Html.ActionLink("Sobre o projeto", "Sobre", "Home")</li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bem-Vindo, <strong>@nome</strong> <i class="glyphicon glyphicon-user"></i> <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="/Usuarios/Conta"><i class="glyphicon glyphicon-wrench"></i> Gerenciar Conta</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/Usuarios/LogOff"><i class="glyphicon glyphicon-log-out"></i> Sair</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container body-content">
+        <hr />
+        @RenderBody()
+
+    </div>
+    <div class="footer" align="center">
+        <p class="text-muted">Desenvolvido por <strong><a href="http://facebook.com/dnrmachado" target="_blank">Denner Evaldt Machado</a></strong> &copy;</p>
+    </div>
+
+    
+
+            @Scripts.Render("~/bundles/jquery")
+            @Scripts.Render("~/bundles/bootstrap")
+            @RenderSection("scripts", required: false)
+</body>
+</html>

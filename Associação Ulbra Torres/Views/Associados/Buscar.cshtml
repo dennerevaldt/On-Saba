@@ -1,0 +1,88 @@
+﻿@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryval")
+
+@{
+    ViewBag.title = "Pesquisar";
+}
+
+<h2>ASSOCIADOS <i class="glyphicon glyphicon-user" style="font-size:1em;"></i></h2>
+<hr />
+
+
+<script type="text/javascript"> function buscarAssoc() {
+     var nome = $("input[name=nomeAssociado]").val();
+$('#divCarregando').show();
+$.ajax({
+    type: "GET",
+    url: '/Associados/BuscaAssociados?nomeAssociado='+nome,
+    dataType: 'html',
+    cache: false,
+    async: true,
+    success: function (data)
+    {
+        $('#divCarregando').hide();
+        $('#divResultadoBusca').html(data);
+    }
+});
+
+ }
+
+</script>
+
+
+
+<div class="col-md-4">
+    <nav class="navbar navbar-default" role="navigation">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-lat">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-collapse-lat">
+            <div class=" panel-heading">Menu</div>
+            <ul class="nav nav-stacked">
+                <li class="active"><a href="/Associados/Index">Associados Cadastrados</a></li>
+                <li><a href="/Associados/AdicionarAssociado/">Adicionar Novo(a)</a></li>
+                <li><a href="/Associados/Deletar/">Excluir</a></li>
+                <li><a href="/Associados/Editar/">Editar</a></li>
+                <li><a href="/Associados/Buscar/">Pesquisar</a></li>
+            </ul>
+
+        </div><!-- /.navbar-collapse -->
+
+    </nav>
+
+</div><!--/end left column-->
+
+<div class="col-md-8">
+    <div class="col-md-6">
+        <h4>Pesquisar de Associados</h4>
+    </div>
+    <div class="col-md-6">
+        <div class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+                <input type="text" id="nomeAssociado" name="nomeAssociado" class="form-control" placeholder="Pesquisar por nome" required>
+            </div>
+            <input type="submit" class="btn btn-default" value="Pesquisar" onclick="buscarAssoc();">
+        </div>
+    </div>
+
+
+    <div id="divCarregando" class="progresso"> 
+        <img src="@Url.Content("~/Content/Imagens/carregando.gif")" /> 
+        <br /> Carregando... 
+    </div>
+
+
+    <div id="divResultadoBusca">
+        @{
+            Html.RenderPartial("BuscaAssociados");
+        }
+    </div>
+
+</div>
+

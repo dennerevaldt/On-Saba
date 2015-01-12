@@ -1,0 +1,44 @@
+﻿@model Associação_Ulbra_Torres.Models.Entidade.Usuarios
+
+@{
+    ViewBag.title = "Alterar Senha";
+    Layout = "~/Views/Shared/_LogIn.cshtml";
+}
+
+<div align="center">
+    <img class="imagemLogin" src="~/Content/Imagens/onsaba.png" height="60" />
+</div>
+
+<div class="col-md-4">
+</div>
+
+<div class="col-md-4">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <hr />
+        <div class="form-horizontal">       
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            @Html.HiddenFor(model => model.idUsuario)
+            @Html.HiddenFor(model => model.email)
+            <div class="form-group">
+                <label>Digite sua nova senha @Html.DisplayFor(model => model.nome):</label>
+                <div>
+                    <input class="form-control text-box single-line" type="password" name="senha" id="senha" required />
+                    @Html.ValidationMessageFor(model => model.senha, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div align="center">
+                    <input type="submit" value="Salvar Senha" class="btn btn-lg btn-success btn-block" />
+                </div>
+            </div>
+        </div>
+    }
+
+</div>
+
+<div class="col-md-4">
+</div>

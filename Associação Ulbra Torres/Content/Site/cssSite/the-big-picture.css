@@ -1,0 +1,106 @@
+/*!
+ * Start Bootstrap - The Big Picture HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+@import url(http://fonts.googleapis.com/css?family=Lato:400italic);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
+
+body {
+	margin-top: 0px;
+	margin-bottom: 50px;
+	background: none;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.full {
+  background: url(../Imagens/background.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+font-family: font-family: 'Lato', sans-serif;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container {
+  padding: 60px 15px 0;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+.icon-rs{
+	padding-right: 5%;
+	opacity: 0.3;
+}
+
+.icon-rs:hover{
+	opacity: 1;
+	-o-transition: all 0.9s;
+	-moz-transition: all 0.9s;
+	-webkit-transition: all 0.9s;
+	-ms-transition: all 0.9s;
+}
+
+.imagemSobre{
+    width: 70%;
+    opacity: 0.3;
+}
+
+.imagemSobre:hover{
+
+    opacity: 1;
+    -o-transition: all 1s;
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+    -ms-transition: all 1s;
+}
+
+.icon-azure {
+    opacity: 0.3;
+}
+
+.icon-azure:hover {
+    opacity: 1;
+    -o-transition: all 1s;
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+    -ms-transition: all 1s;
+}

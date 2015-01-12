@@ -1,0 +1,43 @@
+﻿@model Associação_Ulbra_Torres.Models.Entidade.Usuarios
+
+@{
+    ViewBag.title = "Conta";
+}
+<div>
+    <h4>GERENCIAR CONTA <small>@Model.nome</small></h4>
+    <hr />
+</div>
+
+<div class="col-md-4">
+    <h2></h2>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            @Html.HiddenFor(model => model.idUsuario)
+            <h2>@Model.nome</h2> 
+            <p>@Model.email</p> 
+        </div>
+    </div>
+    <a class="btn btn-sm btn-default btn-block" href="/Usuarios/NovoUsuario">Novo Usuário do sistema</a><br />
+    <a class="btn btn-sm btn-default btn-block" href="/Usuarios/EditarUsuario">Alterar dados cadastrais</a><br />
+    <a class="btn btn-sm btn-default btn-block" href="/Usuarios/AlterarSenhaPainel">Alterar senha</a><br />
+    <a class="btn btn-sm btn-danger btn-block" href="/Usuarios/ExcluirConta">Excluir conta</a><br />
+</div>
+
+<div class="col-md-8">
+    <h2></h2> 
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <center>Painel de gerenciamento da conta</center>
+            <br />
+            @if (ViewBag.sucesso != null)
+            {
+                <div class="alert alert-info text-center" role="alert"> @ViewBag.sucesso</div>
+            }
+        </div>
+    </div>
+
+</div>
+
+
+
+

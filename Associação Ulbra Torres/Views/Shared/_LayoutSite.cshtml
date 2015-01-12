@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html class="full">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ON SABA - Sistema de Associação de Bairro - @ViewBag.Title</title>
+    <link rel="icon" href="@Url.Content("~/Content/Site/favicon.ico")" />
+
+    @Styles.Render("~/Content/Site/cssSite/bootstrap.css")
+    @Styles.Render("~/Content/Site/cssSite/the-big-picture.css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/Site/Home">
+                    <img alt="Brand" height="18" src="~/Content/Site/Imagens/logoSite.png">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="@ViewBag.Home">
+                        @Html.ActionLink("HOME", "Home", "Site")
+                    </li>
+                    <li class="@ViewBag.Sobre">
+                        @Html.ActionLink("SOBRE O PROJETO", "Sobre", "Site")
+                    </li>
+                    <li class="@ViewBag.Planos">
+                        @Html.ActionLink("PLANOS", "Planos", "Site")
+                    </li>
+                    <li @*class="@ViewBag.Servicos"*@ class="disabled">
+                        <a href="#">SERVIÇOS</a>
+                        @*@Html.ActionLink("SERVIÇOS", "Servicos", "Site")*@
+                    </li>
+                    <li class="@ViewBag.Contato">
+                        @Html.ActionLink("CONTATO", "Contato", "Site")
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <a href="/Usuarios/Login" class="btn btn-default navbar-btn">Sign in</a>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    @RenderBody()
+
+    <footer class="footer">
+        <div class="container">
+            <div class="col-lg-3">
+                <p class="text-muted" align="left" style="vertical-align: middle;">
+                    <a class="icon-azure" href="http://azure.microsoft.com/pt-br/overview/what-is-azure/" target="_blank"><img src="~/Content/Site/Imagens/azure.png" height="20"></a>
+                </p>
+            </div>
+            <div class="col-lg-6">
+                <p class="text-muted" align="center" style="vertical-align: middle;">
+                    <img src="~/Content/Site/Imagens/rodape.png" height="15"/>
+                </p>
+            </div>
+            <div class="col-lg-3">
+                <p class="text-muted" align="right" style="vertical-align: middle;">
+                    <a class="icon-rs" href="#"><img src="~/Content/Site/Icones/facebook.png" height="20"></a>
+                    <a class="icon-rs" href="#"><img src="~/Content/Site/Icones/twitter.png" height="20"></a>
+                    <a class="icon-rs" href="/Site/Contato"><img src="~/Content/Site/Icones/email.png" height="16"></a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+
+</body>
+
+</html>

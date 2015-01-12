@@ -1,0 +1,58 @@
+﻿@model Associação_Ulbra_Torres.Models.Entidade.Escolas
+
+@{
+    ViewBag.Title = "Pesquisa por escola";
+}
+
+<h2>ESCOLAS <i class="glyphicon glyphicon-home" style="font-size:1em;"></i></h2>
+<hr />
+
+<div class="col-md-4">
+    <nav class="navbar navbar-default" role="navigation">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-lat">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-collapse-lat">
+            <div class=" panel-heading">Menu</div>
+            <ul class="nav nav-stacked">
+                <li><a href="/Escolas/Index">Escolas Cadastradas</a></li>
+                <li class="active"><a href="/Escolas/AdicionarEscola">Adicionar Nova</a></li>
+                <li><a href="/Escolas/Deletar">Excluir</a></li>
+                <li><a href="/Escolas/Editar">Editar</a></li>
+                <li><a href="/Escolas/DependentePorEscola/">Pesquisa estudantes por escola</a></li>
+            </ul>
+
+
+        </div><!-- /.navbar-collapse -->
+    </nav>
+
+</div><!--/end left column-->
+
+<div class="col-md-8">
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>Pesquisa por Escola</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="input-group">
+                @Html.DropDownListFor(model => model.idEscola, ViewBag.listaEscolas as SelectList, new { @class = "form-control" })
+                <span class="input-group-btn">
+                    <button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-search"></span> Pesquisar </button>
+                </span>
+            </div><!-- /input-group -->
+
+        </div>
+    }
+
+</div>

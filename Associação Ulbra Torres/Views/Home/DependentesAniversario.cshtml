@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Associação_Ulbra_Torres.Models.Entidade.Dependentes>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dataNascimento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dataNascimento)
+            </td>
+            @if (item.email == "")
+            {
+                <td style="color: red;">Nenhum email informado.</td>
+            }
+            else
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.email)
+                </td>
+            }
+        </tr>
+    }
+ </table>
+
+@if (@ViewBag.aviso != null)
+{
+    <div class="alert alert-danger text-center">@ViewBag.aviso</div>
+}

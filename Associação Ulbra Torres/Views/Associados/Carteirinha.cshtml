@@ -1,0 +1,80 @@
+﻿@model Associação_Ulbra_Torres.Models.Entidade.Associados
+
+@{  Layout = null; }
+
+<link href="@Url.Content("~/Content/Carteirinha.css")" rel="stylesheet" type="text/css" />
+
+    <div class="carteirinha">
+        <hr />
+        <div class="page-header" style="padding-left: 2%;">
+            <h3>Carteirinha <small> do Bairro <strong>-</strong> Torres/RS</small></h3>
+        </div>
+        <div class="media">
+            <a class="pull-left">
+                <img data-src="holder.js/140x140" class="img-thumbnail" alt="140x140" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQwIj48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjcwIiB5PSI3MCIgc3R5bGU9ImZpbGw6I2FhYTtmb250LXdlaWdodDpib2xkO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtZmFtaWx5OkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmO2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjE0MHgxNDA8L3RleHQ+PC9zdmc+" style="width: 140px; height: 140px;">
+            </a>
+            <div class="media-body">
+
+                <div class="item-sup-cart" style="padding-left:6%; width:50%;">
+                    <small><strong>Dependentes</strong></small>
+                    <table style="font-size:11px; padding-top:2px;">
+                        <tr>
+                            <th>
+                                <small>Nome</small>
+                            </th>
+                            <th>
+                                <small>Data Nasc.</small>
+                            </th>
+                        </tr>
+
+                        @foreach (var item in Model.dependentes)
+                        {
+                            <tr style="width:100%;">
+                                <td style="padding-right:10px;">
+                                    <small> @item.nome</small>
+                                </td>
+                                <td style="padding-right:6px;">
+                                    <small>@item.dataNascimento.ToString("dd/MM/yyyy")</small>
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                </div>
+
+                <div class="item-sup-cart">
+                    <p><strong>RG</strong></p>
+                    <small>@Html.DisplayFor(model => model.rg)</small>
+                </div>
+
+                <div class="item-sup-cart">
+                    <p><strong>Nome</strong></p>
+                    <small>@Html.DisplayFor(model => model.nome)</small>
+                </div>
+
+                <div class="item-cart" style="padding-left:6%; width:50%; padding-top: 0%;">
+                    <p></p>
+                </div>
+
+                <div class="item-cart">
+                    <p><strong>CPF</strong></p>
+                    <small>@Html.DisplayFor(model => model.cpf)</small>
+                </div>
+
+                <div class="item-cart">
+                    <p><strong>Data Nasc.</strong></p>
+                    <small>@Html.DisplayFor(model => model.dataNascimento)</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+

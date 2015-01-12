@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Associação_Ulbra_Torres.Models.Associados" Collapsed="true">
+    <Position X="1.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAQAAAgAAAAAIAAAAA=</HashCode>
+      <FileName>Models\Associados.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Associação_Ulbra_Torres.Models.Dependentes" Collapsed="true">
+    <Position X="3.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAIIAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Models\Dependentes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Associação_Ulbra_Torres.Models.Escolas" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAABAAAAAAAAAA=</HashCode>
+      <FileName>Models\Escolas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Associação_Ulbra_Torres.Models.EscolasRepositorio" Collapsed="true">
+    <Position X="7" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAABAAAAAAAAAAAEAAEACAABAAAAgAAA=</HashCode>
+      <FileName>Models\EscolasRepositorio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Associação_Ulbra_Torres.Models.Pessoas" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAZAACAAAAAAAAhEAAAMIAAAEAAAAAADAIADAEkAE=</HashCode>
+      <FileName>Models\Pessoas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Associação_Ulbra_Torres.Models.Religioes" Collapsed="true">
+    <Position X="3.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAICAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Religioes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Associação_Ulbra_Torres.Models.Telefones" Collapsed="true">
+    <Position X="6" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAAIAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Telefones.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

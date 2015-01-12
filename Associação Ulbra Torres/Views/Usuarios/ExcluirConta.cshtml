@@ -1,0 +1,48 @@
+﻿@model Associação_Ulbra_Torres.Models.Entidade.Usuarios
+
+@{
+    ViewBag.title = "Excluir";
+}
+<div>
+    <h4>GERENCIAR CONTA <small>@Model.nome</small></h4>
+    <hr />
+</div>
+
+<div class="col-md-4">
+    <h2></h2>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            @Html.HiddenFor(model => model.idUsuario)
+            <h2>@Model.nome</h2>
+            <p>@Model.email</p>
+        </div>
+    </div>
+    <a class="btn btn-sm btn-default btn-block" href="/Usuarios/NovoUsuario">Novo Usuário do sistema</a><br />
+    <a class="btn btn-sm btn-default btn-block" href="/Usuarios/EditarUsuario">Alterar dados cadastrais</a><br />
+    <a class="btn btn-sm btn-default btn-block" href="/Usuarios/AlterarSenhaPainel">Alterar senha</a><br />
+    <a class="btn btn-sm btn-danger btn-block" href="/Usuarios/ExcluirConta">Excluir conta</a><br />
+</div>
+
+<div class="col-lg-8">
+    <h2></h2>
+    <div class="panel panel-default col-md-12">
+        <div class="panel-body">
+            Excluir conta
+            <hr />
+            <h3>Voce tem certeza que deseja deletar a conta de @Model.nome?</h3>
+            <div>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    
+                    @Html.HiddenFor(model => model.idUsuario)
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Deletar conta" class="btn btn-danger" />
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
